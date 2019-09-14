@@ -1,0 +1,139 @@
+<div style="width: 100%">
+  <mat-card>
+    <mat-card-title>
+      <mat-card-title>{{
+        currentOperation === 'Add' ? 'Add User' : 'Update User'
+      }}</mat-card-title>
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="userForm">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput formControlName="name" placeholder="Name" />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Username"
+                  formControlName="username"
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" formControlName="email" />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Phone" formControlName="phone" />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr formGroupName="address">
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Street" formControlName="street" />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Suite" formControlName="suite" />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr formGroupName="address">
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="City" formControlName="city" />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Zip Code"
+                  formControlName="zipcode"
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr formGroupName="address">
+            <td formGroupName="geo">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Lat" formControlName="lat" />
+              </mat-form-field>
+            </td>
+            <td formGroupName="geo">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Long" formControlName="lng" />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr formGroupName="company">
+            <td>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Company Name"
+                  formControlName="name"
+                />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Catch Phrase"
+                  formControlName="catchPhrase"
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td formGroupName="company">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Bs" formControlName="bs" />
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Website"
+                  formControlName="website"
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <div style="width: 50%; margin: 0 auto;">
+        <button
+          mat-button
+          mat-raised-button
+          color="primary"
+          (click)="saveUser()"
+        >
+          {{ currentOperation === 'Add' ? 'Save' : 'Update' }}
+        </button>
+        <button
+          mat-button
+          mat-raised-button
+          color="accent"
+          (click)="closeForm()"
+        >
+          Cancel
+        </button>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</div>
